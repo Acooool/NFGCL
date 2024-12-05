@@ -1,0 +1,35 @@
+# general
+gpu_id: 0
+use_gpu: True
+seed: 2024
+state: INFO
+reproducibility: True
+data_path: 'dataset/'
+checkpoint_dir: 'saved'
+show_progress: True
+
+# training settings
+epochs: 300
+train_batch_size: 2048
+learner: adam
+learning_rate: 0.001
+train_neg_sample_args: {'distribution': None, 'sample_num': 0}
+eval_step: 1
+stopping_step: 10
+clip_grad_norm: ~
+weight_decay: 0
+draw_loss_pic: False
+
+# evaluation settings
+eval_setting: RO_RS,full #对数据随机重排，设置按比例划分数据集
+group_by_user: True
+split_ratio: [0.8,0.1,0.1]
+leave_one_num: 2
+real_time_process: False
+metrics: ["Recall", "NDCG"]
+topk: [10, 20, 50]
+valid_metric: Recall@20
+valid_metric_bigger: True
+eval_batch_size: 4096000
+loss_decimal_place: 4
+metric_decimal_place: 4

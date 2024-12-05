@@ -1,0 +1,48 @@
+# Atomic File Format
+field_separator: "\t"
+seq_separator: " "
+# Model
+embedding_size: 64
+n_layers: 2
+eps: 0.1
+off_rate: 0.0055
+gamma: 0.15
+train_batch_size: 1024
+train_neg_sample_args: {'distribution': None, 'sample_num': 0}
+# Common Features
+USER_ID_FIELD: user_id
+ITEM_ID_FIELD: item_id
+RATING_FIELD: rating
+seq_len: ~
+# Label for Point-wise DataLoader
+LABEL_FIELD: label
+threshold: ~
+# NegSample Prefix for Pair-wise DataLoader
+NEG_PREFIX: neg_
+stopping_step: 20
+# Selectively Loading
+load_col:
+    inter: [user_id, item_id, rating]
+val_interval:
+    rating: "[4,inf)"
+    # the others
+unload_col: ~
+unused_col: ~
+additional_feat_suffix: ~
+
+# Filtering
+rm_dup_inter: ~
+lowest_val: ~
+highest_val: ~
+equal_val: ~
+not_equal_val: ~
+filter_inter_by_user_or_item: True
+
+# Preprocessing
+fields_in_same_space: ~
+preload_weight: ~
+normalize_field: ~
+normalize_all: ~
+
+# Benchmark .inter
+benchmark_filename: ~
