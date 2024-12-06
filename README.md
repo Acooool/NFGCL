@@ -1,5 +1,6 @@
 # NFGCL
 NFGCL: A Negative-sampling-free Graph Contrastive Learning Framework for Recommendation
+
 Our model is in "recbole_gnn/model/general_recommender/nfgcl.py"
 
 If you want to run the model, you can add our code files to the Recbole-GNN-main (an open-source library: **https://github.com/RUCAIBox/RecBole-GNN.git**) and then edit the file **run_recbole_gnn.py**. 
